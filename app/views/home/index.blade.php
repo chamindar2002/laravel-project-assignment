@@ -7,7 +7,7 @@
         <div class="panel-heading">Search Hotels</div>
         <div class="panel-body">
             <div class="form-group">
-                
+<!--                {{var_dump($city_selected)}}-->
                 {{ Form::label('search', 'Filter By City') }}
                 {{ Form::select('city_id', $cities, $city_selected, array('class' => 'form-control','id'=>'city_selector')) }}
             </div>
@@ -117,15 +117,5 @@ $('#city_selector').change(function(event) {
 
 });
 
-function addParam(url, param, value) {
-   var a = document.createElement('a'), regex = /[?&]([^=]+)=([^&]*)/g;
-   var match, str = []; a.href = url; value=value||"";
-   while (match = regex.exec(a.search))
-       if (encodeURIComponent(param) != match[1]) str.push(match[1] + "=" + match[2]);
-   str.push(encodeURIComponent(param) + "=" + encodeURIComponent(value));
-   a.search = (a.search.substring(0,1) == "?" ? "" : "?") + str.join("&");
-   //return a.href;
-   window.location.href = a.href;
-}
 </script>
 @stop

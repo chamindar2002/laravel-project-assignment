@@ -26,9 +26,10 @@
     
     
     <script src="<?php echo url(); ?>/js/jquery-1.11.1.min.js"></script>
-
+    <script src="<?php echo url(); ?>/js/kal_js_func.js"></script>
   
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
     
     <!-- customised css styles -->
     <link href="<?php echo url(); ?>/css/main.css" rel="stylesheet">
@@ -56,9 +57,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="#">
                     <!--SB Admin-->
-                    <strong>LOGO</strong>
+                    <strong>{{utilities::getAppDetails()['name']}}</strong>
                 </a>
             </div>
             <!-- Top Menu Items -->

@@ -23,11 +23,12 @@ class HomeController extends \BaseController{
         
         $page_size = utilities::paginationPageSize();
         
-        if($city_selected == 'All'){ 
-            $data = DB::table('view_hotel_city_relation')->paginate($page_size);
-        }else{
+        $data = DB::table('view_hotel_city_relation')->paginate($page_size);
+         
+        if($city_selected != 'All' && $city_selected != null){ 
             $data = HotelCity::where('city_id', '=', $city_selected)->simplePaginate($page_size); 
         }
+        
         $data->appends(array('city'=>$city_selected));
         
         return View::make('home.index',['data'=>$data,'cities'=>$cities,'city_selected'=>$city_selected]);

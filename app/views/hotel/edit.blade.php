@@ -32,11 +32,42 @@
             <div class="form-group">
                 {{ Form::submit('Save', array('class' => 'btn btn-success')) }}
                 {{ HTML::link('hotel/', 'Cancel', array('class' => 'btn btn-danger')) }}
+                {{ Form::button('Delete',array('class'=>'btn btn-link','id'=>'btn_delete')) }}
+                
             </div>
             {{ Form::close() }}
         </div>
       </div>
+
+                {{Form::open(['method' => 'DELETE', 'route' => ['hotel.destroy', $model->id],'class'=>'delete_form']) }}
+                {{ Form::hidden('id',$model->id) }}
+                {{ Form::close() }}
 <!--</div>-->
 
 
+@stop
+
+
+@section('scripts')
+
+
+
+<script type='text/javascript'>
+var placeholder_html = '<br><span class="loader" style="margin-left:45%;"><img src="<?php echo url(); ?>/images/loading.gif" alt="Loading...") /></span><br><br>';
+
+$(document).ready(function() {
+   $('#btn_delete').click(function(event){
+    
+   //console.log('ok');
+   $('.delete_form').submit();
+    
+    
+});
+
+
+
+
+});
+
+</script>
 @stop

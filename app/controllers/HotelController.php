@@ -65,8 +65,9 @@ class HotelController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		
 	}
+        
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -116,7 +117,11 @@ class HotelController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+            $model = $this->hotel->find(Input::get('id'));
+            
+            $model->delete();
+            Session::flash('success', Messages::getCrudMessages('delete_success'));
+            return Redirect::route('hotel.index');
 	}
         
         public function getHotelDataTable(){
@@ -132,6 +137,8 @@ class HotelController extends \BaseController {
                                         return '<a href="hotel/' . $model->id . '/edit">Edit</a>';
                                         
                                     })
+                                    
+                                
 
                                 ->make();
         }

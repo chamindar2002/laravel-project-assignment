@@ -17,6 +17,13 @@ class utilities{
         return 5;
     }
     
+    public static function getAppDetails(){
+        return array(
+            'name'=>'Assignment:chamindar2002@yahoo.com/0773784828'
+        );
+    }
+
+
     public static function accessControlFlags(){
         return array('block' => 'BLOCK', 'allow' => 'ALLOW');
     }
