@@ -4,7 +4,7 @@
 
 <!--<div class="col-md-4 col-md-offset-4">-->
       <div class="panel panel-info">
-        <div class="panel-heading">Add New City</div>
+        <div class="panel-heading">Add City</div>
         <div class="panel-body">
             {{ Form::open(['route' => 'city.store'])}}
             

@@ -9,7 +9,7 @@
 
 <!--<div class="col-md-4 col-md-offset-4">-->
       <div class="panel panel-info">
-        <div class="panel-heading">Cities</div>
+        <div class="panel-heading">Hotels</div>
         <div class="panel-body">
             {{ Datatable::table()
             ->addColumn('Id','Hotel Name','Address 1','Address 2','City Name','Action')       // these are the column headings to be shown

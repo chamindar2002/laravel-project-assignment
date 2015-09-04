@@ -17,6 +17,9 @@ ClassLoader::addDirectories(array(
 	app_path().'/controllers',
 	app_path().'/models',
 	app_path().'/database/seeds',
+        
+        /* load custom utilities class */
+        app_path().'/libraries/helpers',
 
 ));
 

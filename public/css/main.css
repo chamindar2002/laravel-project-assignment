@@ -1,0 +1,22 @@
+/* 
+    Document   : main
+    Created on : Sep 3, 2015, 8:32:34 AM
+    Author     : Oracle
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.item_place_holder{
+    width: 200px;
+    height: 200px;
+    padding:10px;
+    margin-left: 20px;
+    border: 1px solid #f1f1f1;
+    	border-radius: 5px;
+    float: left;
+    margin-bottom: 20px;
+}

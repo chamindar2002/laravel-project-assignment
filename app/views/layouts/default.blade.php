@@ -24,8 +24,14 @@
     
     <link href="<?php echo url(); ?>/css/bootstrap/main.css" rel="stylesheet">
     
+    
     <script src="<?php echo url(); ?>/js/jquery-1.11.1.min.js"></script>
 
+  
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <!-- customised css styles -->
+    <link href="<?php echo url(); ?>/css/main.css" rel="stylesheet">
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -160,7 +166,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                    <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> HOME</a>
+                        {{ link_to("/", 'Home') }}
                     </li>
                   
                     <li>
@@ -208,7 +214,10 @@
             
                 @yield('content')
                
-
+                @yield('scripts')
+                
+                
+                
             </div>
             <!-- /.container-fluid -->
 
@@ -220,7 +229,7 @@
 
     <!-- jQuery -->
     
-
+    
 </body>
 
 </html>

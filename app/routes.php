@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function()
+/*Route::get('/', function()
 {
-	//return View::make('hello');
-});
+	return View::make('home.index');
+});*/
+
+Route::get('/',array('uses'=>'HomeController@index'));
 
 
 
@@ -30,6 +32,8 @@ Route::get('users/{username}', array('uses'=>'UserController@show'));
 
 Route::resource('city','CityController');
 Route::resource('hotel','HotelController');
+
+Route::post('home/fetchMoreInfo',array('uses'=>'HomeController@fetchMoreInfo'));
 
 Route::group(array('before' => 'auth'), function(){
 	/*Route::get('admin', 'AdminController@index');

@@ -11,7 +11,7 @@ class HotelController extends \BaseController {
     
         protected $hotel;
     
-        public function __construct(City $hotel) {
+        public function __construct(Hotel $hotel) {
            $this->hotel = $hotel;
         }
         
@@ -29,7 +29,11 @@ class HotelController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+            $model = $this->hotel;
+            $cities = ['' => ''] + City::lists('name', 'id');
+
+             
+            return View::make('hotel.create',['model'=>$model,'cities'=>$cities]);
 	}
 
 	/**
@@ -40,7 +44,16 @@ class HotelController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+            if(!$this->hotel->isValid($input = Input::all())){
+                return Redirect::back()->withInput()->withErrors($this->hotel->errors);
+            }
+            
+            $data = Input::all();
+            
+            $this->hotel->create($input);
+            
+            //return Redirect::to('/users');
+            return Redirect::route('hotel.index');
 	}
 
 	/**
@@ -64,7 +77,10 @@ class HotelController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+            $model = $this->hotel->find($id);
+            //return $user;
+            $cities = ['' => ''] + City::lists('name', 'id');
+            return View::make('hotel.edit',array('model'=>$model,'cities'=>$cities));
 	}
 
 	/**
@@ -76,7 +92,19 @@ class HotelController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+            if(!$this->hotel->isValid($input = Input::all())){
+                return Redirect::back()->withInput()->withErrors($this->hotel->errors);
+            }
+            
+            $hotel = $this->hotel->find(Input::get('id'));
+            
+            $hotel->name = Input::get('name');
+            $hotel->address_1 = Input::get('address_1');
+            $hotel->address_2 = Input::get('address_2');
+            $hotel->city_id = Input::get('city_id');
+            $hotel->save();
+            
+            return Redirect::route('hotel.index');
 	}
 
 	/**

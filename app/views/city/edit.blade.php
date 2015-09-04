@@ -4,7 +4,7 @@
 
 <!--<div class="col-md-4 col-md-offset-4">-->
       <div class="panel panel-info">
-        <div class="panel-heading">Add New City</div>
+        <div class="panel-heading">Update City</div>
         <div class="panel-body">
             {{ Form::open(['method' => 'PUT', 'route' => ['city.update', $model->id]]) }}
             {{ Form::hidden('id',$model->id) }}

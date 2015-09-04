@@ -7,7 +7,6 @@ class Hotel extends \Eloquent {
         public static $rules = [
                                 'name' => 'required',
                                 'address_1'=>'required',
-                                'address_1'=>'required',
                                 'city_id'=>'required',
                             ];
         
@@ -33,9 +32,9 @@ class Hotel extends \Eloquent {
         public function labels($key){
             $labels = array(
               'id' => 'ID',
-              'name' => 'Name',
+              'name' => 'Name Of Hotel',
               'address_1'=>'Address 1',
-              'address_1'=>'Address 2',
+              'address_2'=>'Address 2',
               'city_id'=>'City',
             );
             
